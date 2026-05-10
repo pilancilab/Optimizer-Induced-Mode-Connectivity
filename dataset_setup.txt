@@ -1,0 +1,45 @@
+create dataset:
+
+(need pip install "datasets<4.0.0" only for create_splits_bookcorpus.py, since it's using an older verion of datasets)
+python create_splits_bookcorpus.py \
+  --dataset_name bookcorpus \
+  --out_dir ./splits_bookcorpus_contig \
+  --val_frac 0.05 --test_frac 0.05 \
+  --method contiguous
+
+python prepare_bookcorpus_dataset.py \
+  --splits_dir splits_bookcorpus_contig \
+  --out_dir splits_bookcorpus_contig_chunked256 \
+  --tokenizer_dir ./gpt2_tokenizer \
+  --block_size 256 \
+  --num_proc 32
+
+python prepare_lm1b_dataset.py \
+  --dataset_name dvruette/lm1b \
+  --out_dir splits_lm1b_contig_chunked256 \
+  --val_frac 0.05  \
+  --split_method contiguous \
+  --tokenizer_dir ./gpt2_tokenizer \
+  --block_size 256 \
+  --num_proc 32
+
+python prepare_enwik8_dataset.py \
+  --out_dir splits_enwik8_chunked256 \
+  --tokenizer_dir ./gpt2_tokenizer \
+  --block_size 256 \
+  --num_proc 32
+
+python prepare_wikitext103_dataset.py \
+  --out_dir splits_wikitext103_chunked256 \
+  --tokenizer_dir ./gpt2_tokenizer \
+  --block_size 256 \
+  --num_proc 32
+
+python prepare_stories_dataset.py \
+  --out_dir splits_stories_contig_chunked256 \
+  --tokenizer_dir ./gpt2_tokenizer \
+  --block_size 256 \
+  --val_frac 0.05 \
+  --test_frac 0.05 \
+  --split_method contiguous \
+  --num_proc 32
