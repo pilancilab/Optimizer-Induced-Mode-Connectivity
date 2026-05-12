@@ -30,3 +30,18 @@ Train with [run_train.sh](spectral_probe/run_train.sh), then merge [run_merge.sh
 </div>
 
 Train with [run_train.sh](ood/run_train.sh), then merge with [run_merge.sh](ood/run_merge.sh), finally generate OOD plots with [run_eval.sh](ood/run_eval.sh).
+
+## Citation
+
+```bibtex
+@misc{zhang2026optimizerinducedmodeconnectivityadamw,
+      title={Optimizer-Induced Mode Connectivity: From AdamW to Muon}, 
+      author={Fangzhao Zhang and Sungyoon Kim and Erica Zhang and Yiqi Jiang and Mert Pilanci},
+      year={2026},
+      eprint={2605.09991},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2605.09991}, 
+}
+```
+For any question related to this code repo, please contact zfzhao@stanford.edu.
