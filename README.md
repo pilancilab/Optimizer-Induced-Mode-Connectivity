@@ -1,5 +1,7 @@
 # Optimizer-Induced Mode Connectivity: From AdamW to Muon
 
+This is the codebase for result reproducibility for our manuscript: [Optimizer-Induced Mode Connectivity: From AdamW to Muon](https://arxiv.org/abs/2605.09991)
+
 ## Setup
 1. `conda create -n mc python=3.11` and `conda activate mc`
 2. `pip install -r requirements.txt`
